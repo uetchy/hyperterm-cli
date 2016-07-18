@@ -1,0 +1,15 @@
+{
+  "name": "hyperterm-cli",
+  "version": "0.1.0",
+  "description": "Hyperterm CLI interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Yasuaki Uechi <uetchy@randompaper.co> (https://randompaper.co/)",
+  "license": "MIT",
+  "bin": {
+    "hyperterm": "bin/hyperterm"
+  }
+}

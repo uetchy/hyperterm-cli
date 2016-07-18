@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+
+HYPERTERM_CONFIG = process.env["HOME"] + '/.hyperterm.js'
+
+function loadConfig() {
+  return require(HYPERTERM_CONFIG)
+}
+
+function saveConfig(json) {
+  var configJSON = JSON.stringify(json, null, '  ')
+  var configData = 'module.exports = ' + configJSON + ';'
+  fs.writeFile(HYPERTERM_CONFIG, configData)
+}
+
+function addPlugin(pluginName) {
+  var config = loadConfig()
+  config.plugins.push(pluginName)
+  saveConfig(config)
+}
+
+addPlugin(process.argv[2])
