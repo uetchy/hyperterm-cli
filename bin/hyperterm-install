@@ -14,6 +14,11 @@ if (!pkgs.length) {
   process.exit(1)
 }
 
+config = hyperterm.loadConfig()
+
 pkgs.forEach((pkg) => {
-  hyperterm.addPlugin(pkg)
+  if (config.plugins.includes(pkg)) {
+    return console.log("Allready installed")
+  }
+  hyperterm.installPlugin(pkg)
 })

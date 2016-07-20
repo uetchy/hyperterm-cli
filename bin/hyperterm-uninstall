@@ -14,5 +14,5 @@ if (!pkgs.length) {
 }
 
 pkgs.forEach((pkg) => {
-  hyperterm.removePlugin(pkg)
+  hyperterm.uninstallPlugin(pkg)
 })
