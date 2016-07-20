@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const program = require('commander')
+const hyperterm = require('..')
+
+program
+  .option('-f, --force', 'force installation')
+  .parse(process.argv)
+
+var pkgs = program.args
+
+if (!pkgs.length) {
+  console.error('packages required')
+  process.exit(1)
+}
+
+pkgs.forEach((pkg) => {
+  hyperterm.addPlugin(pkg)
+})

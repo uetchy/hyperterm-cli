@@ -1,23 +1,10 @@
 #!/usr/bin/env node
 
-var fs = require('fs')
+const program = require('commander')
 
-HYPERTERM_CONFIG = process.env["HOME"] + '/.hyperterm.js'
-
-function loadConfig() {
-  return require(HYPERTERM_CONFIG)
-}
-
-function saveConfig(json) {
-  var configJSON = JSON.stringify(json, null, '  ')
-  var configData = 'module.exports = ' + configJSON + ';'
-  fs.writeFile(HYPERTERM_CONFIG, configData)
-}
-
-function addPlugin(pluginName) {
-  var config = loadConfig()
-  config.plugins.push(pluginName)
-  saveConfig(config)
-}
-
-addPlugin(process.argv[2])
+program
+  .version('0.0.1')
+  .command('install [name]', 'Install one or more plugins')
+  .command('uninstall [name]', 'Uninstall one or more plugins')
+  .command('list', 'List plugins')
+  .parse(process.argv)

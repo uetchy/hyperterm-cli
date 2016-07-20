@@ -2,4 +2,4 @@
 
 ## Usage
 
-### Install plugin: `$ hyperterm <plugin>`
+### Install plugin: `$ hyperterm install <plugin>`

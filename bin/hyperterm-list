@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const program = require('commander')
+const hyperterm = require('..')
+
+program
+  .parse(process.argv)
+
+const plugins = hyperterm.loadConfig().plugins
+plugins.forEach((plugin) => {
+  console.log(plugin)
+})

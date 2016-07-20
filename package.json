@@ -2,7 +2,7 @@
   "name": "hyperterm-cli",
   "version": "0.1.0",
   "description": "Hyperterm CLI interface",
-  "main": "index.js",
+  "main": "lib/hyperterm",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,9 @@
   "license": "MIT",
   "bin": {
     "hyperterm": "bin/hyperterm"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0"
   }
 }
