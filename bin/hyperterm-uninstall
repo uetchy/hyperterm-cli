@@ -15,4 +15,11 @@ if (!pkgs.length) {
 
 pkgs.forEach((pkg) => {
   hyperterm.uninstallPlugin(pkg)
+    .then(() => {
+      console.log(`Uninstalled: ${pkg}`)
+    })
+    .catch((err) => {
+      console.log(`Failed to uninstall: ${pkg}`)
+      console.log(err)
+    })
 })
