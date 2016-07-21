@@ -6,7 +6,7 @@ const hyperterm = require('..')
 program
   .parse(process.argv)
 
-const plugins = hyperterm.loadConfig().plugins
+const plugins = hyperterm.plugins()
 plugins.forEach((plugin) => {
-  console.log(plugin)
+  console.log(`${plugin.name}@${plugin.version} - ${plugin.description}`)
 })
